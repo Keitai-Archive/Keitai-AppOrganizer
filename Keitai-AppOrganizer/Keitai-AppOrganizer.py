@@ -93,7 +93,7 @@ def process_all_jams(parent):
 def show_classification_gui(apps):
     root = tk.Tk()
     root.title("Classify Apps")
-    root.geometry("600x400")
+    root.geometry("800x500")
     frame = ttk.Frame(root); frame.pack(fill="both", expand=True)
     canvas = tk.Canvas(frame)
     vsb = ttk.Scrollbar(frame, orient="vertical", command=canvas.yview)
@@ -106,7 +106,7 @@ def show_classification_gui(apps):
     for i, (jam, orig, trans, folder, status) in enumerate(apps):
         lbl = ttk.Label(scroll, text=f"{jam}: {trans} ({orig})")
         lbl.grid(row=i, column=0, sticky="w", padx=5, pady=2)
-        cb = ttk.Combobox(scroll, values=STATUSES, state="readonly", width=12)
+        cb = ttk.Combobox(scroll, values=STATUSES, state="readonly", width=15)
         # default
         if status in STATUSES:
             cb.current(STATUSES.index(status))
